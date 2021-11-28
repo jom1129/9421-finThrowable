@@ -194,12 +194,16 @@ public class Utility {
         }
 
         int nVertices1 = shortestDistances.length;
+        System.out.print("Vertex\t\t Distance\tPath");
         for (int vertexIndex = 0;
              vertexIndex < nVertices1;
              vertexIndex++)
         {
             if (vertexIndex != index)
             {
+                System.out.print("\n" + index + " -> ");
+                System.out.print(vertices.get(vertexIndex) + " \t\t ");
+                System.out.print(shortestDistances[vertexIndex] + "\t\t");
                 printPath(vertexIndex, parents, vertices);
             }
         }
