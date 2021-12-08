@@ -136,6 +136,26 @@ public class Utility {
     }
 
 
+    /**
+     * Algorithm:
+     * 1. Create an array shortestDistance that will store the shortest distances to the starting index.
+     *      Assign all values to max values.
+     * 2. Create an array added that will keep track if the vertex is already included in the shortest path tree.
+     *      Assign all values to false.
+     * 3. Create an array parents o store the shortest path tree.
+     *      Set the parent of the starting vertex to 0.
+     * 4. For each vertices
+     *      Get the vertex with the shortest distance.
+     *      Set the index of the vertex as true in the "added" array.
+     *      For each vertices
+     *          update the distance value of each adjacent vertices of the picked vertex
+     * 5. Print the distance and path for each vertex
+     *
+     *
+     * @param matrix Matrix of the graph
+     * @param index Starting vertex
+     * @param vertices List of vertices
+     */
     public void determineShortestPath(Integer[][] matrix, int index, List<String> vertices) {
 
         int nVertices = matrix[0].length;
@@ -207,6 +227,8 @@ public class Utility {
 
         int nVertices1 = shortestDistances.length;
         System.out.print("Vertex\t\t Distance\tPath");
+        
+        // Prints the index, the destination, the distance, and the path for each destination
         for (int vertexIndex = 0;
              vertexIndex < nVertices1;
              vertexIndex++)
@@ -221,6 +243,9 @@ public class Utility {
         }
     }
 
+     /**
+     * Recursive method that prints the path for the vertices.
+     */
     private static void printPath(int currentVertex, int[] parents, List<String> vertices) {
         // Base case : Source node has
         // been processed
